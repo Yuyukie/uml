@@ -1,0 +1,81 @@
+Cahier des Charges Fonctionnel - Plateforme E-commerce
+1. Système Utilisateur
+Données utilisateurs
+Un utilisateur se compose des données suivantes : prénom, nom, adresse complète (ville, rue, code postal), téléphone, email, mot de passe, rôle (client, vendeur, administrateur).
+Fonctionnalités :
+1.1 Gestion de compte
+1.1.1 Création de compte
+En tant que visiteur, je peux me créer un compte pour accéder aux fonctionnalités de la plateforme.
+
+1.1.2 Connexion
+En tant qu'utilisateur, je peux me connecter à mon compte à l'aide de mon email et mot de passe.
+
+1.1.3 Déconnexion
+En tant qu'utilisateur, je peux me déconnecter de mon compte.
+
+1.1.4 Récupération de mot de passe
+En tant qu'utilisateur, je peux demander un lien de récupération de mot de passe.
+
+1.2 Rôles utilisateurs
+1.2.1 Gestion des rôles
+En tant qu'administrateur, je peux attribuer ou modifier le rôle d'un utilisateur.
+
+1.2.2 Gestion des informations
+En tant qu'utilisateur, je peux mettre à jour mes informations personnelles.
+
+2. Système Panier
+Données panier
+Un panier inclut les produits sélectionnés, les quantités, le total, et les éventuelles remises.
+Fonctionnalités :
+2.1 Gestion des articles
+2.1.1 Ajout au panier
+En tant qu'utilisateur, je peux ajouter un produit à mon panier depuis une fiche produit.
+
+2.1.2 Modification de quantité
+En tant qu'utilisateur, je peux modifier la quantité d'un produit dans mon panier.
+
+2.1.3 Suppression d'articles
+En tant qu'utilisateur, je peux retirer un produit de mon panier.
+
+2.2 Validation et paiement
+2.2.1 Validation du panier
+En tant qu'utilisateur, je peux valider mon panier pour initier la commande.
+
+2.2.2 Paiement
+En tant qu'utilisateur, je peux payer ma commande via des moyens de paiement sécurisés.
+
+3. Système Boutiques
+Données boutiques
+Une boutique inclut des informations telles que : nom, description, adresse (optionnelle), produits associés.
+Fonctionnalités :
+3.1 Gestion des boutiques
+3.1.1 Création de boutique
+En tant que vendeur, je peux créer une boutique pour vendre mes produits.
+
+3.1.2 Modification de boutique
+En tant que vendeur, je peux modifier les informations de ma boutique.
+
+3.1.3 Gestion des produits dans une boutique
+En tant que vendeur, je peux associer des produits à ma boutique.
+
+4. Système Gestion des Produits
+Données produits
+Un produit inclut des informations telles que : nom, description, prix, stock, catégorie.
+Fonctionnalités :
+4.1 Catalogue produits
+4.1.1 Ajout de produit
+En tant que vendeur, je peux ajouter un produit au catalogue.
+
+4.1.2 Modification de produit
+En tant que vendeur, je peux modifier les détails d’un produit.
+
+4.1.3 Suppression de produit
+En tant que vendeur, je peux retirer un produit de mon catalogue.
+
+4.2 Organisation et recherche
+4.2.1 Catégories de produits
+En tant qu’administrateur, je peux gérer les catégories pour organiser les produits.
+
+4.2.2 Recherche de produits
+En tant qu'utilisateur, je peux rechercher des produits en utilisant des filtres et des mots-clés.
+

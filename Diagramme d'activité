@@ -1,0 +1,74 @@
+@startuml
+|Utilisateur|
+|Système|
+|Administrateur|
+
+|Utilisateur|
+start
+:S'inscrire sur la plateforme;
+:Fournir moyen de paiement principal;
+
+|Système|
+:Vérifier validité du moyen de paiement;
+if (Moyen de paiement valide?) then (oui)
+    :Prélever 1€;
+    :Activer période d'essai gratuit (1 mois);
+    :Enregistrer type d'abonnement choisi;
+else (non)
+    :Notifier échec;
+    stop
+endif
+
+while (Abonnement actif?) is (oui)
+    |Système|
+    :Tentative prélèvement mensuel;
+    if (Prélèvement réussi?) then (oui)
+        :Générer facture mensuelle;
+    else (non)
+        if (Autres moyens de paiement?) then (oui)
+            :Switcher automatiquement vers autre moyen;
+            :Nouvelle tentative de prélèvement;
+        else (non)
+            :Envoyer email de notification;
+            :Attendre 10 jours;
+            if (Paiement effectué?) then (oui)
+                :Continuer service;
+            else (non)
+                :Suspendre compte;
+                |Administrateur|
+                :Possibilité de débloquer compte;
+            endif
+        endif
+    endif
+
+    |Utilisateur|
+    if (Demande upgrade?) then (oui)
+        :Choisir nouvel abonnement;
+        |Système|
+        :Mettre à jour type abonnement;
+        :Ajuster montant prélèvement;
+    endif
+
+    if (Demande remboursement?) then (oui)
+        |Utilisateur|
+        :Soumettre justification;
+        |Administrateur|
+        if (Remboursement approuvé?) then (oui)
+            :Valider remboursement;
+            |Système|
+            :Générer avoir;
+            :Effectuer remboursement;
+        else (non)
+            :Notifier refus;
+        endif
+    endif
+endwhile (non)
+
+|Utilisateur|
+:Demande résiliation;
+|Système|
+:Désactiver renouvellement automatique;
+:Maintenir service jusqu'à fin période;
+
+stop
+@enduml

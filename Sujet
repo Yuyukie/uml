@@ -1,0 +1,21 @@
+Diagramme de classe et d'activité (juste pour le paiement), 
+
+
+F1 : s'inscrire sur la Plateforme (prénom, nom de famille, coordonnée bancaire, avec prélèvement bancaire d'1€ à la souscription d'un abonnement, un mois d'essaie gratuit)
+F2 : basique = 30 films ou séries par mois, une pub toute les 30 minutes, premium = 50,  gold = illimité prix (à choisir)
+F3 : retard de paiement (prélèvement pas passez), email envoyer si pas payer sous dix jours on coupe le compte, l'admin peut débloquer le compte
+F4 : de basique on peut upgrade mais après on ne peut plus revenir sur un compte en dessous
+F5 : chaque film et chaque séries peuvent comporter des resctrictions, peuvent avoir des notification de contenu (tabac, âge, violence)
+F6 : une série est un enchainement de film
+F7 : Si les films font partis d'une série, ils sont automatiquement rattaché à la saison.
+F8 : il faut qu'un admin puisse remboursser les utilisateurs pas content qui a justifié le pourquoi, cette  utilisateur puisse consulter les factures mensuel et 
+    de remboursement
+F9 : l'utilisateur doit pouvoir ajouter, modifier un moyen de paiement, peut consulter les factures mensuel et 
+    de remboursement
+F10 : Si un utilisateur à plusieurs moyens de paiement et que le prélèvement ne s'est pas fait pour x raison, on switch automatiquement de paiement
+F11 : user peut like, dislike, ou super like une vidéo
+F12 : User doit pouvoir partager des vidéos avec les personnes avec qui il est amis sur la Plateforme.
+F13 : User peut inviter des gens par mail (ajoute directement dans la liste d'ami à la création du compte) et peut ajouter des amis
+F14 : User peut se désabonner
+F15 : Algoryhtme de préférence, propose du contenu adapté.
+F16 : Chaque film et série ont leur propre catégorie

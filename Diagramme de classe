@@ -1,0 +1,140 @@
+@startuml
+skinparam class {
+    BackgroundColor LightBlue
+    BorderColor Navy
+}
+
+class Utilisateur {
+  -prenom: String
+  -nom: String
+  -email: String
+  -typeAbonnement: TypeAbonnement
+  -ville: String
+  -rue: String
+  -codePostal: String
+  -dateDebutEssai: Date
+  -limiteContenuMensuel: Integer
+  -publiciteActive: Boolean
+  -dateFinAbonnement: Date
+  -historiqueAbonnement: TypeAbonnement[]
+  -statutCompte: StatutCompte
+  -categoriesPreferees: String[]
+  -historiqueVisionnage: Contenu[]
+}
+
+class Contenu {
+  -titre: String
+  -description: String
+  -duree: Integer
+  -restrictions: String[]
+  -notifications: String[]
+  -categorie: String
+}
+
+class Amitie {
+  -dateCreation: Date
+  -statutAmitie: StatutAmitie
+  -emailInvitation: String
+}
+
+class Partage {
+  -datePartage: Date
+  -message: String
+}
+
+class Serie {
+  -description: String
+  -categorie: String
+}
+
+class Saison {
+  -numeroSaison: Integer
+}
+
+class Film {
+  -annee: String
+}
+
+class MoyenPaiement {
+  -type: String
+  -numero: String
+  -dateExpiration: String
+  -estPrincipal: Boolean
+}
+
+class Interaction {
+  -type: TypeInteraction
+  -date: Date
+}
+
+class Facture {
+  -date: Date
+  -montant: Double
+  -statut: StatutFacture
+  -typeFacture: TypeFacture
+}
+
+class Remboursement {
+  -montant: Double
+  -justification: String
+  -dateRemboursement: Date
+}
+
+enum TypeAbonnement {
+  BASIQUE
+  PREMIUM
+  GOLD
+}
+
+enum TypeInteraction {
+  LIKE
+  DISLIKE
+  SUPER_LIKE
+}
+
+enum StatutFacture {
+  PAYEE
+  EN_RETARD
+  REMBOURSEE
+}
+
+enum TypeFacture {
+  MENSUELLE
+  REMBOURSEMENT
+}
+
+enum StatutCompte {
+  ACTIF
+  DESABONNE
+  SUSPENDU
+}
+
+enum StatutAmitie {
+  EN_ATTENTE
+  ACCEPTEE
+  REFUSEE
+}
+
+Utilisateur "1" -- "*" MoyenPaiement
+Utilisateur "1" -- "*" Facture
+Utilisateur "1" -- "*" Interaction
+Utilisateur "1" -- "*" Remboursement
+Utilisateur "1" -- "*" Amitie : demandeur
+Utilisateur "1" -- "*" Amitie : receveur
+Utilisateur "1" -- "*" Partage : emetteur
+Utilisateur "1" -- "*" Partage : destinataire
+Partage "*" -- "1" Contenu : contenu partagé
+Interaction "*" -- "1" Contenu
+Film --|> Contenu
+Serie "1" -- "*" Saison
+Saison "1" -- "*" Film
+Serie --|> Contenu
+
+Utilisateur ..> TypeAbonnement : utilise
+Utilisateur ..> StatutCompte : utilise
+Interaction ..> TypeInteraction : utilise
+Facture ..> StatutFacture : utilise
+Facture ..> TypeFacture : utilise
+Amitie ..> StatutAmitie : utilise
+
+@enduml
